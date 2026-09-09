@@ -1,0 +1,119 @@
+[
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 53863,
+        "ja3": "771,4865,43-51",
+        "ja3_digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "source_ip": "27.123.43.204",
+        "source_port": 443,
+        "timestamp": 1788960100.338112
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 57846,
+        "ja3": "771,4865,43-51",
+        "ja3_digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "source_ip": "151.101.105.44",
+        "source_port": 443,
+        "timestamp": 1788960100.9650285
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 50417,
+        "ja3": "771,4865,43-51",
+        "ja3_digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "source_ip": "27.123.43.205",
+        "source_port": 443,
+        "timestamp": 1788960100.9650652
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 59819,
+        "ja3": "771,4865,43-51",
+        "ja3_digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "source_ip": "27.123.43.205",
+        "source_port": 443,
+        "timestamp": 1788960100.9650779
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 54971,
+        "ja3": "771,4865,43-51",
+        "ja3_digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "source_ip": "27.123.43.205",
+        "source_port": 443,
+        "timestamp": 1788960100.9650955
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 64254,
+        "ja3": "771,4865,43-51",
+        "ja3_digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "source_ip": "27.123.43.205",
+        "source_port": 443,
+        "timestamp": 1788960101.151262
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 55592,
+        "ja3": "771,4865,51-43",
+        "ja3_digest": "eb1d94daa7e0344597e756a1fb6e7054",
+        "source_ip": "142.250.77.98",
+        "source_port": 443,
+        "timestamp": 1788960101.357569
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 50105,
+        "ja3": "771,4865,43-51",
+        "ja3_digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "source_ip": "3.174.255.86",
+        "source_port": 443,
+        "timestamp": 1788960101.3714094
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 57591,
+        "ja3": "771,4865,51-43",
+        "ja3_digest": "eb1d94daa7e0344597e756a1fb6e7054",
+        "source_ip": "35.190.80.1",
+        "source_port": 443,
+        "timestamp": 1788960102.5202343
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 63215,
+        "ja3": "771,4865,43-51",
+        "ja3_digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "source_ip": "106.10.218.155",
+        "source_port": 443,
+        "timestamp": 1788960103.7332356
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 52130,
+        "ja3": "771,4865,43-51",
+        "ja3_digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "source_ip": "52.85.118.111",
+        "source_port": 443,
+        "timestamp": 1788960103.7675943
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 56374,
+        "ja3": "771,4865,43-51",
+        "ja3_digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "source_ip": "106.10.218.155",
+        "source_port": 443,
+        "timestamp": 1788960103.9574218
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 50323,
+        "ja3": "771,4865,43-51",
+        "ja3_digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "source_ip": "52.85.118.111",
+        "source_port": 443,
+        "timestamp": 1788960104.0532339
+    }
+]
