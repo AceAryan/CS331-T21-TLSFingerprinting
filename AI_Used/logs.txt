@@ -1,0 +1,4 @@
+Tools - Claude
+Prompts - Format this info for Github readme
+Thought Process - didn't want to waste time in formatting stuff
+Step by Step Deatils - None
