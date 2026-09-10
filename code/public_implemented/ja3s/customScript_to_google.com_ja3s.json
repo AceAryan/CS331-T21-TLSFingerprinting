@@ -1,0 +1,11 @@
+[
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 52200,
+        "ja3": "771,49199,23-65281-11-35",
+        "ja3_digest": "b44baa8a20901c5663b3a9664ba8a767",
+        "source_ip": "142.251.151.119",
+        "source_port": 443,
+        "timestamp": 1788961613.7364619
+    }
+]

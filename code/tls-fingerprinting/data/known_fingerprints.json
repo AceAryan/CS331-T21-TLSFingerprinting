@@ -1,0 +1,58 @@
+{
+  "ja3": {
+    "256df020330319e9bdb64a79634d10be":"Brave",
+    "3df90768aa985051ad497a4f0ce19269":"Brave",
+    "50ad38c9e4b6b741a0f778a67e6bc5e4":"Brave",
+    "1f6685a348ee591dc7b4f8ea14aae2aa":"Brave",
+    "c1d19c3b90ef3c426f814275f10301eb":"Brave",
+    "333dafdec9fe9a7d7119cc6a946e90cd":"Brave",
+    "1e08151091167915355e349b795ec1b3":"Brave",
+    "07270cd9bac23838838f66b2f0589414":"Brave",
+    "7a5e9f6a8a6cd2e91d392d4041cff5f0":"Brave",
+    "9d823fd80aba37a006ff3e2c71c37447":"Brave",
+    "a5a08bdfbd77ee35af1dddc2e387e23e":"Brave",
+    "fae0e5d973c96ae1888b99538efa0363":"curl",
+    "c92d32b372549464558d8e3f9945e8a6":"Chrome",
+    "95bb8b44f52b762200e7d599a871d0f5":"Chrome",
+    "a060b83f5a91481ac7e3e0d3c80a9d96":"Chrome",
+    "7a26ab96da21becd9cbe8cda65663164":"Chrome",
+    "aa0dbd2096eeb4a9bcea30ea8123ac12":"Chrome",
+    "efd25d04781992ea1de6b0ec20e2c62b":"Chrome",
+    "6e523d54d129d205e6a67fdbedff0ad1":"Chrome",
+    "a60c1cfc7915d91871e162e4ac9524fd":"Chrome",
+    "06285306a868f963247657ff6b5e2beb":"Chrome",
+    "04d547f8371183f9204e12859406ca01":"Chrome",
+    "96623ab89fb645f0d923ed41ec531b4f":"Chrome",
+    "8ba8e73220ba2aebe85856a6865c17be":"Chrome",
+    "83fdf43c4b312b4313c6118ab6aad56a":"Chrome",
+    "ad69e6282f428e4a2d9f1688b22206af":"customClient",
+    "009efd12e526dd197247b4a5bb55f0a6":"Edge browser",
+    "ba8cd966839c92a63b90b489c9df4771":"Edge browser",
+    "a1673a9fa11fa32ec4dcbf4f2b639d7b":"Edge browser",
+    "163d1ce5166a7c7d64412897b8779462":"Edge browser",
+    "0b34ab47e6aee754585b3923a43bd4c4":"Edge browser",
+    "59890702b3abc094cc99d48b9c11069d":"Edge browser",
+    "72c98229daade6b19f3cb2ce063402b0":"Edge browser",
+    "0aa16e5275f3ed2a5168ced59003d2ae":"Edge browser",
+    "a388336e3217d608ebac0153193166b3":"Edge browser",
+    "c8d2bdf875b6607ba1a4016bdcd04ab5":"Edge browser",
+    "c02358e7deb0469b10683134ae06d39c":"Edge browser",
+    "f645536e07dd4747257db1b9e3f38e23":"Edge browser",
+    "cd08e31494f9531f560d64c695473da9":"Chromium 100"
+  },
+  "ja3s": {
+    "f4febc55ea12b31ae17cfb7e614afda8":"github_brave/yahoo_chrome/github_chromium_100",
+    "9dd9697e41bf4842b13869ec64041126":"curl_google",
+    "b44baa8a20901c5663b3a9664ba8a767":"google_customScript",
+    "eb1d94daa7e0344597e756a1fb6e7054":"youtube_edge",
+    "15af977ce25de452b96affa2addb1036":"youtube_edge",
+    "907bf3ecef1c987c889946b737b43de8":"youtube_edge"
+      },
+  "ja4": {
+    "t13d1516h2_8daaf6152771_806a8c22fdea":"Brave/chrome/edge",
+    "t13d1516h2_8daaf6152771_e5627efa2ab1":"chromium_100",
+    "t13d2013h1_2b729b4bf6f3_e24568c0d440":"curl",
+    "t12d030700_0f9cd282b7f5_e7e480e5a997":"customScript"
+  
+  }
+}

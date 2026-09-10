@@ -1,0 +1,21 @@
+[
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 61982,
+        "ja3": "771,49199,11-65281-23",
+        "ja3_digest": "9dd9697e41bf4842b13869ec64041126",
+        "source_ip": "100.49.207.126",
+        "source_port": 443,
+        "timestamp": 1788953768.1111746
+    },
+    {
+        "destination_ip": "10.7.13.112",
+        "destination_port": 61983,
+        "ja3": "771,49199,11-65281-23",
+        "ja3_digest": "9dd9697e41bf4842b13869ec64041126",
+        "source_ip": "50.17.227.24",
+        "source_port": 443,
+        "timestamp": 1788953769.5562615
+    }
+
+]
