@@ -30,6 +30,7 @@ code/
                                   #   traffic captured on a real machine
   tests/             # unit tests (synthetic ClientHello builders, no network needed)
   main.py
+  pytest.ini         # scopes `pytest` to tests/ (public_implemented/ has its own vendored suite)
   public_implemented/  # sibling directory: reference JA3/JA4 scripts + pcaps
 ```
 
