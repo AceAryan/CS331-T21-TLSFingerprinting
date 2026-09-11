@@ -64,7 +64,7 @@ def ja4(ch: ClientHello, protocol: str = "t") -> tuple:
     ext_hex_sorted = sorted(
         f"{t:04x}" for t in ext_types if t not in (EXT_SERVER_NAME, EXT_ALPN)
     )
-    sig_algs_hex = [f"{s:04x}" for s in ch.signature_algorithms]
+    sig_algs_hex = [f"{s:04x}" for s in ch.signature_algorithms if s not in GREASE_VALUES]
     ja4_c_input = ",".join(ext_hex_sorted) + "_" + ",".join(sig_algs_hex)
     ja4_c = hashlib.sha256(ja4_c_input.encode()).hexdigest()[:12]
 

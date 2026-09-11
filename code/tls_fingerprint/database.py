@@ -8,7 +8,7 @@ trusting stale hardcoded values.
 import json
 import os
 
-DEFAULT_DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "known_fingerprints.json")
+DEFAULT_DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "live_learned.json")
 
 
 class FingerprintDB:
