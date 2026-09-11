@@ -7,8 +7,11 @@ client application -- purely from its handshake, with no decryption involved.
 
 ## Project structure
 
+All paths below are relative to this `code/` directory (a sibling of
+`public_implemented/`, which holds the reference implementations and pcaps).
+
 ```
-tls-fingerprinting/
+code/
   tls_fingerprint/
     tls_parser.py   # raw TLS record/handshake parsing (no external deps)
     ja3.py           # JA3 / JA3S (MD5, Salesforce spec)
@@ -22,22 +25,24 @@ tls-fingerprinting/
                                   #   reference implementations, used to check the
                                   #   extractor's output against a trusted source
   data/learned_fingerprints.json # curated via our own CLI against the same
-                                  #   reference pcaps (code/public_implemented/)
+                                  #   reference pcaps (public_implemented/)
   data/live_learned.json         # curated via our own CLI against real live
                                   #   traffic captured on a real machine
   tests/             # unit tests (synthetic ClientHello builders, no network needed)
   main.py
+  public_implemented/  # sibling directory: reference JA3/JA4 scripts + pcaps
 ```
 
 ## Setup
 
+Run these commands from inside `code/`:
+
 ```powershell
-cd tls-fingerprinting
 pip install -r requirements-dev.txt
 ```
 
 Npcap (bundled with Wireshark) is required for **live** capture on Windows.
-You already have it installed. Live capture also requires the terminal to
+Live capture also requires the terminal to
 be running **as Administrator**.
 
 ## Usage
@@ -87,24 +92,26 @@ learned with its own command while that client made an HTTPS connection:
 
 ```powershell
 # Terminal 1 (run each of these one at a time)          # Terminal 2 (while it's running)
-python main.py identify --live --duration 12 --filter "tcp port 443" --learn brave  --db data/live_learned.json
-                                                          & "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" https://example.com
+python main.py identify --live --duration 8  --filter "tcp port 443" --learn custom_client
+                                                          python clients/custom_tls_client.py example.com
 
-python main.py identify --live --duration 12 --filter "tcp port 443" --learn chrome --db data/live_learned.json
-                                                          & "C:\Program Files\Google\Chrome\Application\chrome.exe" https://example.com
-
-python main.py identify --live --duration 12 --filter "tcp port 443" --learn edge   --db data/live_learned.json
-                                                          & "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" https://example.com
-
-python main.py identify --live --duration 8  --filter "tcp port 443" --learn curl   --db data/live_learned.json
-                                                          curl.exe https://example.com
-
-python main.py identify --live --duration 8  --filter "tcp port 443" --learn git    --db data/live_learned.json
+python main.py identify --live --duration 8  --filter "tcp port 443" --learn git
                                                           git ls-remote https://github.com/octocat/Hello-World.git HEAD
 
-python main.py identify --live --duration 8  --filter "tcp port 443" --learn custom_client --db data/live_learned.json
-                                                          python clients/custom_tls_client.py example.com
+python main.py identify --live --duration 8  --filter "tcp port 443" --learn curl
+                                                          curl.exe https://example.com
+
+python main.py identify --live --duration 12 --filter "tcp port 443" --learn brave
+                                                          & "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" https://example.com
+
+python main.py identify --live --duration 12 --filter "tcp port 443" --learn edge
+                                                          & "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" https://example.com
+
+python main.py identify --live --duration 12 --filter "tcp port 443" --learn chrome
+                                                          & "C:\Program Files\Google\Chrome\Application\chrome.exe" https://example.com
 ```
+
+(no `--db` needed -- these all write to the default `data/live_learned.json`)
 
 **Cleaning up contamination.** A live capture with a broad `tcp port 443`
 filter picks up *every* TLS connection on the machine during that window --
@@ -143,19 +150,27 @@ python main.py identify --live --duration 10 --filter "tcp port 443" --db data/l
 Result from doing exactly this for all 6 clients (fresh connections, sites
 never visited during learning included):
 
-| Client | Fresh-connection match rate |
-|---|---|
-| Brave | 100% |
-| Chrome | 11/11 |
-| Edge | 8/8 |
-| curl | matched |
-| git | matched |
-| custom_client | matched (self-consistent within run) |
+| Client | JA3 matched | JA4 matched |
+|---|---|---|
+| custom_client | Yes -- deterministic client, no randomization | Yes |
+| git | Yes | Yes |
+| curl | Yes | Yes |
+| Brave | No -- randomizes extension order every connection | Yes (5/5) |
+| Edge | No -- same reason | Yes (8/8) |
+| Chrome | No -- same reason | Yes (11/11) |
 
-All 6 were correctly identified purely from their handshake, with zero
-`UNKNOWN`s once the database was clean -- satisfying the brief's "at least 5
-distinct clients" requirement using real live traffic end-to-end through our
-own extractor, not pcap replay.
+This is the core result the project sets out to demonstrate: for the three
+Chromium-based browsers, **JA3 never matches** a fresh connection (each one
+produces a hash never seen before, even to the same site visited during
+learning), while **JA4 matches every time** -- because it sorts ciphers and
+extensions before hashing, so browser-side randomization doesn't change the
+result. For the three simple, non-randomizing clients (curl, git,
+custom_client), both JA3 and JA4 match reliably, since there's no per-connection
+shuffling to defeat in the first place.
+
+All 6 clients were correctly identified purely from their handshake by JA4,
+satisfying the brief's "at least 5 distinct clients" requirement using real
+live traffic end-to-end through our own extractor, not pcap replay.
 
 ## Why JA3 *and* JA4?
 
