@@ -14,5 +14,5 @@
 | Kovid Parmar | 23110172 |
 | Kudumula Vinod Kumar Reddy | 23110178 |
 | Ogiboyina Akash | 23110225 |
-| Shivamani | 22110062 |
+| Chinthala Shivamani | 22110062 |
 | Aryan Kumar | 24110055 |
