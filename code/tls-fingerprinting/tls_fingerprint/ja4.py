@@ -27,7 +27,9 @@ _VERSION_CODES = {
 
 
 def _version_code(ch: ClientHello) -> str:
-    versions = ch.supported_versions if ch.supported_versions else [ch.version]
+    versions = [v for v in ch.supported_versions if v not in GREASE_VALUES]
+    if not versions:
+        versions = [ch.version]
     return _VERSION_CODES.get(max(versions), "00")
 
 
