@@ -1,4 +1,4 @@
-## Project Info
+## CS-331 Project Info
 
 | Field | Details |
 |-------|---------|
